@@ -23,7 +23,7 @@ const Header = () => {
                     <span className='absolute top-[-5px] left-6 flex justify-center items-center font-semibold'>0</span>
                   </div>
             <img className='w-8 h-8 rounded-full' src={profile} alt="" /> </div>
-                   : <ul className='md:flex md:items-center md:gap-8 hidden '>
+                   : <ul className='md:flex md:items-center md:gap-8 '>
                       <li className='text-base text-black font-bold  hover:text-orange-900 hover:underline underline-offset-2 decoration-[1px] cursor-pointer duration-300'>Home</li>
                       <li className='text-base text-black font-bold hover:text-orange-900 hover:underline underline-offset-2 decoration-[1px] cursor-pointer duration-300'>Pages</li>
                       <li className='text-base text-black font-bold hover:text-orange-900 hover:underline underline-offset-2 decoration-[1px] cursor-pointer duration-300'>Shop</li>
@@ -31,10 +31,10 @@ const Header = () => {
                       <li className='text-base text-black font-bold hover:text-orange-900 hover:underline underline-offset-2 decoration-[1px] cursor-pointer duration-300'>Blog</li>
                   </ul>}
                   <div className='relative '>
-                    {/* <GiShoppingCart className='w-8 h-8' /> */}
+                    <GiShoppingCart className='w-8 h-8' />
                     <span className='absolute top-[-5px] left-6 flex justify-center items-center font-semibold'>0</span>
                   </div>
-                  {/* <img className='w-8 h-8 rounded-full' src={profile} alt="" /> */}
+                  <img className='w-8 h-8 rounded-full' src={profile} alt="" />
             </div>
             <button className='md:hidden' onClick={()=>setIsOpen(!isOpen)}>X</button>
         </div>
