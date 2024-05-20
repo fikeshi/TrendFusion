@@ -4,6 +4,8 @@ import Header from './components/Header'
 import Home from './pages/Home'
 import Cart from './pages/Cart'
 import {Route, Routes, Outlet, BrowserRouter} from "react-router-dom"
+import { productsData } from './Api/Api'
+
 
 
 const layout=()=>{
@@ -23,7 +25,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={layout()}>
-          <Route path='/' element={<Home/>}/>
+            <Route index loader:productsData element={<Home/>}/>
           <Route path='/cart' element={<Cart/>}/>
         </Route>  
       </Routes>

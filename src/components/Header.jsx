@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const Header = () => {
     const [isOpen, setIsOpen]=useState(false)
   return (
-      <div className='w-full h-20 bg-white border-b-[1px] border-b-gray-800 font-titleFont relative '> 
+      <div className='w-full h-20 bg-white border-b-[1px] border-b-gray-800 font-titleFont sticky top-0 z-10'> 
       <div className="max-w-screen-xl mx-auto h-full flex items-center justify-between md:ml-28 md:mr-28 ml-4 mr-4  ">
             <div>
                 <img className="w-48" src={trendlogo} alt="Trendfusion logo" />
