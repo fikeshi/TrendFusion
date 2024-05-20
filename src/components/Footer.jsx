@@ -7,7 +7,7 @@ import { FaGithub, FaHome } from "react-icons/fa";
 function Footer() {
   return (
     <div className='bg-black text-gray-300'>
-          <div className=' container max-w-screen-xl  mx-auto flex gap-3 flex-col md:p-8 md:flex-row md:justify-between items-center '>
+          <div className=' container max-w-screen-xl  mx-auto flex gap-3 flex-col pl-2 md:p-8 md:flex-row md:justify-between '>
             {/* Trendfusion Container */}
             <div className=' flex flex-col gap-4'>
                 <h2 className='text-4xl text-white font-bold tracking-tighter'>TrendFusion</h2>
