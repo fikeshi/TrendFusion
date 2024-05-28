@@ -3,35 +3,29 @@ import Footer from './components/Footer'
 import Header from './components/Header'
 import Home from './pages/Home'
 import Cart from './pages/Cart'
-import {Route, Routes, Outlet, BrowserRouter} from "react-router-dom"
-import { productsData } from './Api/Api'
+import {createBrowserRouter, RouterProvider } from "react-router-dom"
+import Layout from './components/Layout'
+import { ProductsData } from './Api/Api'
 
-
-
-const layout=()=>{
-  return (
-  <div>
-    <Header />
-    <Outlet />
-    <Footer />
-  </div>
-  )
-}
-
+const router=createBrowserRouter([
+  {
+    path:"/",
+    element:<Layout/>,
+    children:[
+      {
+      path:"",
+      element:<Home/>,
+      loader: ProductsData,
+      },
+      {
+      path:"/cart",
+      element:<Cart/>
+      }
+  ]
+  }
+])
 
 function App() {
-  return (
-    <div className='font-bodyFont'>
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={layout()}>
-            <Route index loader:productsData element={<Home/>}/>
-          <Route path='/cart' element={<Cart/>}/>
-        </Route>  
-      </Routes>
-    </BrowserRouter>
-    </div>
-  )
+return <RouterProvider router={router}/>
 }
-
 export default App
