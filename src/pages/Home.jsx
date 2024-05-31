@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Banner from '../components/Banner'
-import Product from '../components/Product'
+import Product from '../components/Products'
 import { useLoaderData } from 'react-router-dom'
 
 const Home = () => {
