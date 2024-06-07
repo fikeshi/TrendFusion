@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Banner from '../components/Banner'
-import Product from '../components/Products'
+import Products from '../components/Products'
 import { useLoaderData } from 'react-router-dom'
 
 const Home = () => {
@@ -13,8 +13,8 @@ const Home = () => {
 
   return (
     <div>
-      <Banner/>
-      <Product products={products}/>
+      <Banner/> 
+      <Products products={products}/>
     </div>
   )
 }

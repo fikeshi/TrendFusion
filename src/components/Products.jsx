@@ -1,7 +1,7 @@
 import React from 'react'
 import ProductsCard from './ProductsCard'
 
-function Product({products}) {
+function Products({products}) {
   // console.log(products)
   return (
     <div className='py-6'>
@@ -21,4 +21,4 @@ function Product({products}) {
   )
 }
 
-export default Product
+export default Products
