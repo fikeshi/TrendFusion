@@ -2,11 +2,11 @@ import React, { useState } from 'react'
 import { IoIosArrowRoundForward } from "react-icons/io";
 
 function ProductsCard({product}) {
-  console.log(product)
+  console.log(product) 
 
   return (
     <div className='group relative'>
-      <div className='w-full h-96 cursor-pointer overflow-hidden relative'>
+      <div className='w-full h-96 cursor-pointer overflow-hidden relative box '>
         <img className='h-full w-full object-cover group-hover:scale-110 duration-500 ' src={product.image}  alt="product image" />
         {/* <div className='absolute top-4 right-0 '>
           <p className='text-white bg-black'>sales</p>
@@ -33,5 +33,4 @@ function ProductsCard({product}) {
   )
 }
 
-export default ProductsCard
-1  
+export default ProductsCard 

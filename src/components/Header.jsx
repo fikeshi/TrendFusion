@@ -19,7 +19,8 @@ const Header = () => {
                       <li className='text-base text-black font-bold hover:text-orange-900 hover:underline underline-offset-2 decoration-[1px] cursor-pointer duration-300'>Shop</li>
                       <li className='text-base text-black font-bold hover:text-orange-900 hover:underline underline-offset-2 decoration-[1px] cursor-pointer duration-300'>Element</li>
                       <li className='text-base text-black font-bold hover:text-orange-900 hover:underline underline-offset-2 decoration-[1px] cursor-pointer duration-300'>Blog</li>
-                  </ul> <div className='relative hidden'>
+                  </ul> 
+                  <div className='relative hidden'>
                     <GiShoppingCart className='w-8 h-8' />
                     <span className='absolute top-[-5px] left-6 flex justify-center items-center font-semibold'>0</span>
                   </div>
