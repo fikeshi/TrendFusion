@@ -2,14 +2,19 @@ import React, { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import { useState } from 'react'
 import { FaStar } from "react-icons/fa";
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../Redux/trendfusionSlice';
 
 function Product() {
+  const dispatch = useDispatch()
   const [details, setDetails] = useState({})
+  const [baseQty, setBaseQty] = useState(1)
   const location = useLocation()
   useEffect(()=>{
    setDetails(location.state.item)
-   console.log(location.state.item)
   },[])
+
+
   return (
     <div>
       <div className='max-w-screen-xl mx-auto my-10 flex gap-10'>
@@ -43,12 +48,19 @@ function Product() {
             <div className='w-52 border flex gap-4 items-center justify-between p-3'>
               <p className='text-sm'>Quantity</p>
               <div className='flex items-center gap-4 font-semibold text-sm'>
-                <button className='border h-5 font-normal text-lg flex items-center justify-center px-2 hover:bg-gray-700 hover:text-whiye cursor-pointer duration-300 active:bg-black'>-</button>
-                <span>{1}</span>
-                <button className='border h-5 font-normal text-lg flex items-center justify-center px-2 hover:bg-gray-700 hover:text-whiye cursor-pointer duration-300 active:bg-black'>+</button>
+                <button onClick={()=>setBaseQty((prev)=>prev === 1 ? (prev = 1) : prev - 1)} className='border h-5 font-normal text-lg flex items-center justify-center px-2 hover:bg-gray-700 hover:text-whiye cursor-pointer duration-300 active:bg-black'>-</button>
+                <span>{baseQty}</span>
+                <button onClick={()=>setBaseQty(baseQty + 1)} className='border h-5 font-normal text-lg flex items-center justify-center px-2 hover:bg-gray-700 hover:text-whiye cursor-pointer duration-300 active:bg-black'>+</button>
               </div>
             </div>
-            <button className='bg-black text-white py-3 px-6 active:bg-gray-800'>Add to Cart</button>
+            <button onClick={()=>dispatch(addToCart({
+              id: details.id,
+              title: details.title,
+              image: details.image,
+              price: details.price,
+              quantity: baseQty,
+              description: details.description,
+            }))} className='bg-black text-white py-3 px-6 active:bg-gray-800'>Add to Cart</button>
           </div>
           <p className='text-base text-gray-500'>Catergory: <span className='capitalize font-medium'>{details.category}</span></p>
         </div>

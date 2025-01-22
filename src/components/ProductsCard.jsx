@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
 import { IoIosArrowRoundForward } from "react-icons/io";
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { addToCart } from '../Redux/trendfusionSlice';
 
 function ProductsCard({ product }) {
+  const dispatch = useDispatch()
   const navigate = useNavigate()
   const productId = product.title
   const productIdString = (productId) => {
@@ -33,9 +36,16 @@ function ProductsCard({ product }) {
           <div className='flex justify-end gap-2 relative overflow-hidden w-32 text-sm  '>
             <div className='flex gap-2 transform transition-transform group-hover:translate-x-24 duration-500' >
               <p className='line-through text-gray-500'>$69</p>
-              <p>${product.price}</p>
+              <p className='semi-bold'>${product.price}</p>
             </div>
-            <p className='absolute z-20 w-[100px] text-gray-500 hover:text gray-900  flex items-center gap-1 top-0 -translate-x-32 group-hover:translate-x-0 transition-transform duration-500 cursor-pointer'>add to cart  <span><IoIosArrowRoundForward /></span> </p>
+            <p onClick={()=>dispatch(addToCart({
+              id: product.id,
+              title:product.title,
+              image:product.image,
+              price: product.price,
+              quantity:1,
+              description:product.description,
+            }))} className=''>add to cart  <span><IoIosArrowRoundForward /></span> </p>
           </div>
         </div>
         <div>
@@ -45,5 +55,7 @@ function ProductsCard({ product }) {
     </div>
   )
 }
+
+// absolute z - 20 w - [100px] text - gray - 500 hover:text gray - 900  flex items - center gap - 1 top - 0 - translate - x - 32 group - hover: translate - x - 0 transition - transform duration - 500 cursor - pointer
 
 export default ProductsCard 

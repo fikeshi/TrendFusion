@@ -3,9 +3,12 @@ import trendlogo from '../assets/trend-logo.png'
 import { GiShoppingCart } from "react-icons/gi";
 import profile from "../assets/profile-image.jpeg"
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const Header = () => {
     const [isOpen, setIsOpen]=useState(false)
+    const productData = useSelector((state)=>state.trendFusion.productData)
+    // console.log(productData)
   return (
       <div className='w-full h-20 bg-white border-b-[1px] border-b-gray-800 font-titleFont sticky top-0 z-10'> 
       <div className="max-w-screen-xl mx-auto h-full flex items-center justify-between md:ml-28 md:mr-28 ml-4 mr-4  ">
@@ -36,7 +39,7 @@ const Header = () => {
                   </ul>}
                     <Link to='/cart'><div className='relative '>
                     <GiShoppingCart className='w-8 h-8' />
-                    <span className='absolute top-[-5px] left-6 flex justify-center items-center font-semibold'>0</span>
+                    <span className='absolute top-[-7px] left-7 flex justify-center items-center font-semibold'>{productData.length}</span>
                   </div></Link>
                   <img className='w-8 h-8 rounded-full' src={profile} alt="" />
             </div>

@@ -1,11 +1,3 @@
-import React from 'react'
-
-function Cart() {
-  return (
-    <div>
-      <h1>hjl;nc</h1>
-    </div>
-  )
+ export function Cart (){
+     return    <>uebiy</>
 }
-
-export default Cart

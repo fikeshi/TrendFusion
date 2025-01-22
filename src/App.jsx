@@ -1,8 +1,6 @@
 import './App.css'
-import Footer from './components/Footer'
-import Header from './components/Header'
 import Home from './pages/Home'
-import Cart from './pages/Cart'
+// import Cart from './pages/Cart'
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import Layout from './components/Layout'
 import Product from './components/Product'
@@ -22,10 +20,10 @@ const router = createBrowserRouter([
         path: "/product/:id",
         element: <Product />,
       },
-      {
-        path: "/cart",
-        element: <Cart />
-      }
+      // {
+      //   path: "/cart",
+      //   element: <Cart />
+      // }
     ]
   }
 ])
