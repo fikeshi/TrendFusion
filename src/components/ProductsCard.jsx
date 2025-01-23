@@ -3,6 +3,7 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { addToCart } from '../Redux/trendfusionSlice';
+import { ToastContainer, toast } from 'react-toastify';
 
 function ProductsCard({ product }) {
   const dispatch = useDispatch()
@@ -45,13 +46,25 @@ function ProductsCard({ product }) {
               price: product.price,
               quantity:1,
               description:product.description,
-            }))} className=''>add to cart  <span><IoIosArrowRoundForward /></span> </p>
+            })) & toast.success(`${product.title} is added`)
+            } className=''>add to cart  <span><IoIosArrowRoundForward /></span> </p>
           </div>
         </div>
         <div>
           <p>{product.category}</p>
         </div>
       </div>
+      <ToastContainer
+        position="top-left"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </div>
   )
 }

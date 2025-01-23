@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { FaStar } from "react-icons/fa";
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../Redux/trendfusionSlice';
+import { toast, ToastContainer } from 'react-toastify';
 
 function Product() {
   const dispatch = useDispatch()
@@ -60,11 +61,23 @@ function Product() {
               price: details.price,
               quantity: baseQty,
               description: details.description,
-            }))} className='bg-black text-white py-3 px-6 active:bg-gray-800'>Add to Cart</button>
+            })) & toast.success(`${details.title} is added`)
+            } className='bg-black text-white py-3 px-6 active:bg-gray-800'>Add to Cart</button>
           </div>
           <p className='text-base text-gray-500'>Catergory: <span className='capitalize font-medium'>{details.category}</span></p>
         </div>
       </div>
+      <ToastContainer
+        position="top-left"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </div>
   )
 }

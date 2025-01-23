@@ -37,10 +37,12 @@ const Header = () => {
                       <li className='text-base text-black font-bold hover:text-orange-900 hover:underline underline-offset-2 decoration-[1px] cursor-pointer duration-300'>Element</li>
                       <li className='text-base text-black font-bold hover:text-orange-900 hover:underline underline-offset-2 decoration-[1px] cursor-pointer duration-300'>Blog</li>
                   </ul>}
-                    <Link to='/cart'><div className='relative '>
+                    <Link to='/cart'>
+                      <div className='relative '>
                     <GiShoppingCart className='w-8 h-8' />
                     <span className='absolute top-[-7px] left-7 flex justify-center items-center font-semibold'>{productData.length}</span>
-                  </div></Link>
+                      </div>
+                  </Link>
                   <img className='w-8 h-8 rounded-full' src={profile} alt="" />
             </div>
             <button className='md:hidden' onClick={()=>setIsOpen(!isOpen)}>X</button>
